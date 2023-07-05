@@ -4,6 +4,7 @@ import style from './index.css';
 
 export default function () {
   const [microAppState, setState] = useState('Hello');
+  // 主应用使用 useModel('@@qiankunStateForSlave') 获取子应用传递的全局状态
   const { setQiankunGlobalState } = useModel('@@qiankunStateForSlave');
 
   return (
@@ -26,6 +27,7 @@ export default function () {
         修改全局 state
       </button>
       <button onClick={() => setState((s) => s + 'o')}>修改子应用 props</button>
+      {/* 使用 <MicroApp /> 组件的方式装载子应用*/}
       <MicroApp testProp1={microAppState} name="app1" />
     </div>
   );

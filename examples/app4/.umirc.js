@@ -4,16 +4,13 @@ export default {
   mountElementId: 'app4',
   qiankun: {
     slave: {
-      masterEntry: 'http://localhost:8000',
+      // masterEntry: 'http://localhost:8000',
     },
   },
   plugins: [
     '@umijs/plugin-model',
     '@umijs/plugin-antd',
     '@umijs/plugin-qiankun',
-    // require.resolve('../../../plugin-model/lib'),
-    // require.resolve('../../../plugin-antd/lib'),
-    // require.resolve('../../../plugin-qiankun/lib'),
   ],
   // TODO 测试约定式路由
   routes: [

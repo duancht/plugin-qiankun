@@ -13,9 +13,5 @@ export default {
     '@umijs/plugin-model',
     '@umijs/plugin-antd',
     '@umijs/plugin-qiankun',
-    // require.resolve('../../../plugin-dva/lib'),
-    // require.resolve('../../../plugin-model/lib'),
-    // require.resolve('../../../plugin-antd/lib'),
-    // require.resolve('../../../plugin-qiankun/lib'),
   ],
 };

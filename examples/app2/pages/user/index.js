@@ -2,8 +2,9 @@ import React from 'react';
 import { Button, Table } from 'antd';
 import { connect } from 'dva';
 import { connectMaster } from 'umi';
+
 @connect(({ user }) => ({ user }))
-@connectMaster
+@connectMaster        // 当子应用使用 @connectMaster 装饰器修饰一个组件时，该组件就可以通过 props 获取主应用传递过来的数据或方法
 export default class extends React.PureComponent {
   constructor(props) {
     super(props);

@@ -1,20 +1,22 @@
 import { Layout, Menu } from 'antd';
-import Link from 'umi/link';
+import { Link } from 'umi';
 import style from './style.less';
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 
-export default ({ children }) => (
+export default ({ children, location }) => (
   <Layout className={style.layout}>
     <Sider width={200} className={style.sider}>
       <Menu
         mode="inline"
         defaultSelectedKeys={['dashboard']}
+        // 使刷新浏览器时菜单选择不会出错
+        selectedKeys={[location.pathname.replace('/', '') || 'dashboard']}   
         style={{ height: '100%', borderRight: 0 }}
       >
         <Menu.Item key="dashboard">
-          <Link to="/123">App3 Dashboard</Link>
+          <Link to="/">App3 Dashboard</Link>
         </Menu.Item>
         <Menu.Item key="user">
           <Link to="/user">User</Link>

@@ -1,3 +1,4 @@
+// .umirc.js 是 UmiJS 默认的配置文件，用于存放项目的配置选项。
 export default {
   publicPath: 'http://localhost:8000/',
   proxy: {
@@ -13,6 +14,10 @@ export default {
       target: 'http://localhost:8003',
       changeOrigin: true,
     },
+    '/api/app4': {
+      target: 'http://localhost:8004',
+      changeOrigin: true,
+    },
   },
   qiankun: {
     master: {
@@ -22,24 +27,28 @@ export default {
   routes: [
     {
       path: '/',
-      component: '../layouts/index.js',
+      component: '../layouts/index.js',   // 将布局组件作为路由配置的 component，使得可以在这个文件中取到 routes 的数据。
       routes: [
         {
           path: '/app2',
-          exact: false,
+          exact: false,       // 开启非精确匹配，'/app2/user'同样处理
           component: './app2/index.js',
         },
         {
           path: '/app3',
           microApp: 'app3',
           settings: {
-            singular: false,
+            singular: false,    // 可以在主应用中多次加载同一个微应用，每个实例都是独立的，具有自己的状态、路由等信息。
           },
           microAppProps: {
             autoSetLoading: true,
             className: 'appClassName',
             wrapperClassName: 'wrapperClass',
           },
+        },
+        {
+          path: '/app4',
+          microApp: 'app4',
         },
         {
           path: '/',
@@ -53,39 +62,5 @@ export default {
     '@umijs/plugin-model',
     '@umijs/plugin-antd',
     '@umijs/plugin-qiankun',
-    // require.resolve('../../../plugin-dva/lib'),
-    // require.resolve('../../../plugin-model/lib'),
-    // require.resolve('../../../plugin-antd/lib'),
-    // require.resolve('../../../plugin-qiankun/lib'),
-    // [
-    //   '../../index',
-    //   {
-    //     master: {
-    //       defer: true,
-    //       sandbox: true,
-    //       prefetch: true,
-    //     },
-    //   },
-    // ],
-    // [
-    //   'umi-plugin-react',
-    //   {
-    //     title: 'qiankun-demo',
-    //     antd: true,
-    //     dva: {
-    //       immer: true,
-    //       hmr: true,
-    //     },
-    //     dynamicImport: true,
-    //     routes: {
-    //       exclude: [
-    //         /models\//,
-    //         /services\//,
-    //         /model\.(t|j)sx?$/,
-    //         /service\.(t|j)sx?$/,
-    //       ],
-    //     },
-    //   },
-    // ],
   ],
 };

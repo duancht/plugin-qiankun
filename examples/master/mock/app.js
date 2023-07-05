@@ -22,5 +22,10 @@ export default {
       entry: 'http://localhost:8003/app3',
       to: '/app3',
     },
+    {
+      name: 'app4',
+      entry: 'http://localhost:8004/app4',
+      to: '/app4',
+    },
   ],
 };
