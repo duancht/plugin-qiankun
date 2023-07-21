@@ -1,6 +1,6 @@
 export default {
   publicPath: '/app3/',
-  outputPath: './dist/app3',
+  outputPath: '../dist/app3',
   mountElementId: 'app3',
   qiankun: {
     slave: {},

@@ -19,6 +19,7 @@ package-lock.json
 pnpm-lock.yaml
 *bak
 
+/examples/dist/*
 
 # visual studio code
 .history

@@ -1,6 +1,7 @@
 // .umirc.js 是 UmiJS 默认的配置文件，用于存放项目的配置选项。
 export default {
   publicPath: 'http://localhost:8000/',
+  outputPath: '../dist',
   proxy: {
     '/api/app1': {
       target: 'http://localhost:8001',

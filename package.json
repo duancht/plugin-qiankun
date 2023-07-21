@@ -10,7 +10,13 @@
     "start:app1": "cd examples/app1 && umi dev",
     "start:app2": "cd examples/app2 && umi dev",
     "start:app3": "cd examples/app3 && umi dev",
-    "start:app4": "cd examples/app4 && umi dev"
+    "start:app4": "cd examples/app4 && umi dev",
+    "build": "npm-run-all --parallel build:*",
+    "build:master": "cd examples/master && umi build",
+    "build:app1": "cd examples/app1 && umi build",
+    "build:app2": "cd examples/app2 && umi build",
+    "build:app3": "cd examples/app3 && umi build",
+    "build:app4": "cd examples/app4 && umi build"
   },
   "files": [
     "lib",
