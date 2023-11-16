@@ -11,7 +11,7 @@ export default {
     '@umijs/plugin-antd',
     '@umijs/plugin-qiankun',
   ],
-  // TODO 测试约定式路由
+  // TODO 测试约定式路由优先于layouts中的Menu
   // routes: [
   //   { path: '/', exact: true, component: './index.js' },
   //   { path: '/:abc', component: './$abc.js' },

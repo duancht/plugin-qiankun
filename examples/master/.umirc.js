@@ -15,10 +15,6 @@ export default {
       target: 'http://localhost:8003',
       changeOrigin: true,
     },
-    '/api/app4': {
-      target: 'http://localhost:8004',
-      changeOrigin: true,
-    },
   },
   qiankun: {
     master: {
@@ -46,10 +42,6 @@ export default {
             className: 'appClassName',
             wrapperClassName: 'wrapperClass',
           },
-        },
-        {
-          path: '/app4',
-          microApp: 'app4',
         },
         {
           path: '/',

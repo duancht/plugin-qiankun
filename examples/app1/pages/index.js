@@ -23,7 +23,7 @@ export default function () {
 
       <Drawer
         title="嵌入 app2"
-        visible={visible}
+        open={visible}
         onClose={() => {
           setVisible(false);
         }}
